@@ -454,32 +454,22 @@ npm run dev
 The dev server will launch and automatically open a new browser tab containing your dapp.
 
 Pete's Pet Shop
-Pete's Pet Shop
-
 A MetaMask pop-up should appear requesting your approval to allow Pete's Pet Shop to connect to your MetaMask wallet. Without explicit approval, you will be unable to interact with the dapp. Click Connect.
 
 MetaMask approval request
-MetaMask approval request
-
 To use the dapp, click the Adopt button on the pet of your choice.
 
 You'll be automatically prompted to approve the transaction by MetaMask. Click Submit to approve the transaction.
 
 Adoption transaction review
-Adoption transaction review
-
 You'll see the button next to the adopted pet change to say "Success" and become disabled, just as we specified, because the pet has now been adopted.
 
 Adoption success
-Adoption success
-
 Note: If the button doesn't automatically change to say "Success", refreshing the app in the browser should trigger it.
 
 And in MetaMask, you'll see the transaction listed:
 
 MetaMask transaction
-MetaMask transaction
-
 You'll also see the same transaction listed in Ganache under the "Transactions" section.
 
 Congratulations! You have taken a huge step to becoming a full-fledged dapp developer. For developing locally, you have all the tools you need to start making more advanced dapps. If you'd like to make your dapp live for others to use, stay tuned for our future tutorial on deploying to the Ropsten testnet.
