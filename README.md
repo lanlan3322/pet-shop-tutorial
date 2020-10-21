@@ -31,7 +31,9 @@ There are a few technical requirements before we start. Please install the follo
 -   [Node.js v8+ LTS and npm](https://nodejs.org/en/)  (comes with Node)
 -   [Git](https://git-scm.com/)
 
+
 Once we have those installed, we only need one command to install Truffle:
+
 
 ```shell
 npm install -g truffle
