@@ -33,8 +33,9 @@ There are a few technical requirements before we start. Please install the follo
 
 
 Once we have those installed, we only need one command to install Truffle:
-https://github.com/lanlan3322/pet-shop-tutorial/blob/master/cmd.png
 
+ ![Open cmd window](https://github.com/lanlan3322/pet-shop-tutorial/blob/master/cmd.png "Open cmd window")
+    
 
 ```shell
 npm install -g truffle
