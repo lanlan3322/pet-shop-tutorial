@@ -281,11 +281,82 @@ You've now written your first smart contract and deployed it to a locally runnin
 
 ## [](https://www.trufflesuite.com/tutorials/pet-shop#testing-the-smart-contract-using-solidity)Testing the smart contract using Solidity
 
-Expand This Section
+Truffle is very flexible when it comes to smart contract testing, in that tests can be written either in JavaScript or Solidity. In this tutorial, we'll be writing our tests in Solidity.
+Create a new file named TestAdoption.sol in the test/ directory.
 
-## [](https://www.trufflesuite.com/tutorials/pet-shop#testing-the-smart-contract-using-javascript)Testing the smart contract using JavaScript
+Add the following content to the TestAdoption.sol file:
 
-Expand This Section
+pragma solidity ^0.5.0;
+
+import "truffle/Assert.sol";
+import "truffle/DeployedAddresses.sol";
+import "../contracts/Adoption.sol";
+
+contract TestAdoption {
+ // The address of the adoption contract to be tested
+ Adoption adoption = Adoption(DeployedAddresses.Adoption());
+
+ // The id of the pet that will be used for testing
+ uint expectedPetId = 8;
+
+ //The expected owner of adopted pet is this contract
+ address expectedAdopter = address(this);
+
+}
+We start the contract off with 3 imports:
+
+Assert.sol: Gives us various assertions to use in our tests. In testing, an assertion checks for things like equality, inequality or emptiness to return a pass/fail from our test. Here's a full list of the assertions included with Truffle.
+DeployedAddresses.sol: When running tests, Truffle will deploy a fresh instance of the contract being tested to the blockchain. This smart contract gets the address of the deployed contract.
+Adoption: The smart contract we want to test.
+Note: The first two imports are referring to global Truffle files, not a `truffle` directory. You should not see a `truffle` directory inside your `test/` directory.
+
+Then we define three contract-wide variables:
+
+First, one containing the smart contract to be tested, calling the DeployedAddresses smart contract to get its address.
+Second, the id of the pet that will be used to test the adoption functions.
+Third, since the TestAdoption contract will be sending the transaction, we set the expected adopter address to this, a contract-wide variable that gets the current contract's address.
+Testing the adopt() function
+To test the adopt() function, recall that upon success it returns the given petId. We can ensure an ID was returned and that it's correct by comparing the return value of adopt() to the ID we passed in.
+
+Add the following function within the TestAdoption.sol smart contract, after the declaration of Adoption:
+
+// Testing the adopt() function
+function testUserCanAdoptPet() public {
+  uint returnedId = adoption.adopt(expectedPetId);
+
+  Assert.equal(returnedId, expectedPetId, "Adoption of the expected pet should match what is returned.");
+}
+Things to notice:
+
+We call the smart contract we declared earlier with the ID of expectedPetId.
+Finally, we pass the actual value, the expected value and a failure message (which gets printed to the console if the test does not pass) to Assert.equal().
+Testing retrieval of a single pet's owner
+Remembering from above that public variables have automatic getter methods, we can retrieve the address stored by our adoption test above. Stored data will persist for the duration of our tests, so our adoption of pet expectedPetId above can be retrieved by other tests.
+
+Add this function below the previously added function in TestAdoption.sol.
+
+// Testing retrieval of a single pet's owner
+function testGetAdopterAddressByPetId() public {
+  address adopter = adoption.adopters(expectedPetId);
+
+  Assert.equal(adopter, expectedAdopter, "Owner of the expected pet should be this contract");
+}
+After getting the adopter address stored by the adoption contract, we assert equality as we did above.
+
+Testing retrieval of all pet owners
+Since arrays can only return a single value given a single key, we create our own getter for the entire array.
+
+Add this function below the previously added function in TestAdoption.sol.
+
+// Testing retrieval of all pet owners
+function testGetAdopterAddressByPetIdInArray() public {
+  // Store adopters in memory rather than contract's storage
+  address[16] memory adopters = adoption.getAdopters();
+
+  Assert.equal(adopters[expectedPetId], expectedAdopter, "Owner of the expected pet should be this contract");
+}
+Note the memory attribute on adopters. The memory attribute tells Solidity to temporarily store the value in memory, rather than saving it to the contract's storage. Since adopters is an array, and we know from the first adoption test that we adopted pet expectedPetId, we compare the testing contracts address with location expectedPetId in the array.
+
 
 ### [](https://www.trufflesuite.com/tutorials/pet-shop#running-the-tests)Running the tests
 
