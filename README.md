@@ -1,4 +1,4 @@
-Source: https://www.trufflesuite.com/tutorials/pet-shop
+Source: https://www.trufflesuite.com/tutorial
 
 
 
@@ -6,7 +6,7 @@ This tutorial will take you through the process of building your first dapp---an
 
 This tutorial is meant for those with a basic knowledge of Ethereum and smart contracts, who have some knowledge of HTML and JavaScript, but who are new to dapps.
 
-**Note**: For Ethereum basics, please read the Truffle  [Ethereum Overview](https://www.trufflesuite.com/tutorials/ethereum-overview)  tutorial before proceeding.
+**Note**: For Ethereum basics, please read the Truffle  [Ethereum Overview](https://www.trufflesuite.com/guides/ethereum-overview)  tutorial before proceeding.
 
 In this tutorial we will be covering:
 
@@ -18,7 +18,7 @@ In this tutorial we will be covering:
 6.  Creating a user interface to interact with the smart contract
 7.  Interacting with the dapp in a browser
 
-## [](https://www.trufflesuite.com/tutorials/pet-shop#background)Background
+## Background
 
 Pete Scandlon of Pete's Pet Shop is interested in using Ethereum as an efficient way to handle their pet adoptions. The store has space for 16 pets at a given time, and they already have a database of pets. As an initial proof of concept,  **Pete wants to see a dapp which associates an Ethereum address with a pet to be adopted.**
 
