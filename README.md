@@ -152,7 +152,7 @@ In Ganache, note that the state of the blockchain has changed. The blockchain no
     
     MetaMask network menu
     
-5.  In the box titled "New Network" enter  `http://127.0.0.1:7545`  and click  **Save**.
+5.  In the box titled "New Network" enter  `http://127.0.0.1:7545` , chainID '1337', netowork name 'Pet-Shop', currency symbol 'ETH' and click  **Save**.
     
     ![MetaMask Custom RPC](https://www.trufflesuite.com/img/tutorials/pet-shop/metamask-customrpc.png "MetaMask Custom RPC")
     
@@ -168,7 +168,12 @@ In Ganache, note that the state of the blockchain has changed. The blockchain no
     
     MetaMask account configured
     
-    Configuration is now complete.
+    Import a wallet from Ganache to Metamask:
+    - Click key icon of the wallet in Ganache (tooltip is 'Show Keys')
+    - Copy private key string
+    - Open metamask 
+    - Import account
+    - Paste the private key string and import
 
 7.  Start the local web server:
     
