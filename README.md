@@ -8,27 +8,18 @@ This tutorial is meant for those with a basic knowledge of Ethereum and smart co
 
 **Note**: For Ethereum basics, please read the Truffle  [Ethereum Overview](https://www.trufflesuite.com/guides/ethereum-overview)  tutorial before proceeding.
 
-In this tutorial we will be covering:
-
-1.  Setting up the development environment
-2.  Creating a Truffle project using a Truffle Box
-3.  Writing the smart contract
-4.  Compiling and migrating the smart contract
-5.  Testing the smart contract
-6.  Creating a user interface to interact with the smart contract
-7.  Interacting with the dapp in a browser
-
 ## Background
 
 Pete Scandlon of Pete's Pet Shop is interested in using Ethereum as an efficient way to handle their pet adoptions. The store has space for 16 pets at a given time, and they already have a database of pets. As an initial proof of concept,  **Pete wants to see a dapp which associates an Ethereum address with a pet to be adopted.**
 
-The website structure and styling will be supplied.  **Our job is to write the smart contract and front-end logic for its usage.**
+The website structure and styling will be supplied.  **Our job is to understand the smart contract and front-end logic for its usage.**
 
 ## [](https://www.trufflesuite.com/tutorials/pet-shop#setting-up-the-development-environment)Setting up the development environment
 
 There are a few technical requirements before we start. Please install the following:
 
 -   [Node.js v8+ LTS and npm](https://nodejs.org/en/)  (comes with Node)
+-   [Ganache](https://www.trufflesuite.com/ganache)  (comes with Node)
 
 
 Once we have those installed, we only need one command to install Truffle:
@@ -41,10 +32,6 @@ npm install -g truffle
 ```
 
 To verify that Truffle is installed properly, type  `truffle version`  on a terminal. If you see an error, make sure that your npm modules are added to your path.
-
-We also will be using  [Ganache](https://www.trufflesuite.com/ganache), a personal blockchain for Ethereum development you can use to deploy contracts, develop applications, and run tests. You can download Ganache by navigating to  [http://truffleframework.com/ganache](http://truffleframework.com/ganache)  and clicking the "Download" button.
-
-**Note**: If you are developing in an environment without a graphical interface, you can also use Truffle Develop, Truffle's built-in personal blockchain, instead of Ganache. You will need to change some settings---such as the port the blockchain runs on---to adapt the tutorial for Truffle Develop.
 
 
 1.  In a terminal, make sure you are in the root of the directory that contains the dapp and type:
