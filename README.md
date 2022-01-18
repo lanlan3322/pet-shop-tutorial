@@ -8,9 +8,6 @@ This tutorial is meant for those with a basic knowledge of Ethereum and smart co
 
 **Note**: For Ethereum basics, please read the Truffle  [Ethereum Overview](https://www.trufflesuite.com/guides/ethereum-overview)  tutorial before proceeding.
 
-## Background
-
-Pete Scandlon of Pete's Pet Shop is interested in using Ethereum as an efficient way to handle their pet adoptions. The store has space for 16 pets at a given time, and they already have a database of pets. As an initial proof of concept,  **Pete wants to see a dapp which associates an Ethereum address with a pet to be adopted.**
 
 The website structure and styling will be supplied.  **Our job is to understand the smart contract and front-end logic for its usage.**
 
@@ -205,4 +202,4 @@ In Ganache, note that the state of the blockchain has changed. The blockchain no
     You'll also see the same transaction listed in Ganache under the "Transactions" section.
     
 
-Congratulations! You have taken a huge step to becoming a full-fledged dapp developer. For developing locally, you have all the tools you need to start making more advanced dapps. If you'd like to make your dapp live for others to use, stay tuned for our future tutorial on deploying to the Ropsten testnet.
+Congratulations! You have taken a huge step to becoming a full-fledged dapp developer. For developing locally, you have all the tools you need to start making more advanced dapps. 
